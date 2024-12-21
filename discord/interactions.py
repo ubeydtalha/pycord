@@ -172,6 +172,7 @@ class Interaction:
         "entitlements",
         "context",
         "authorizing_integration_owners",
+        "original_payload",
         "_channel_data",
         "_message_data",
         "_guild_data",
