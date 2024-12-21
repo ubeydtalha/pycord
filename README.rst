@@ -46,6 +46,11 @@ Fork Features
    add_users_from_role(self, role: Snowflake = None , role_id : int = None , roles : list[Role] = None , role_ids : list[int] = None)
 
 
+Note
+----
+
+Pycord supports Python ``3.9`` - ``3.12``
+
 Key Features
 ------------
 

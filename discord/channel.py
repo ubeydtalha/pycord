@@ -41,7 +41,7 @@ import discord.abc
 
 from . import utils
 from .asset import Asset
-from .emoji import Emoji, PartialEmoji
+from .emoji import Emoji, PartialEmoji , GuildEmoji
 from .enums import (
     ChannelType,
     EmbeddedActivity,
@@ -1028,7 +1028,7 @@ class ForumChannel(_TextChannel):
         The initial slowmode delay to set on newly created threads in this channel.
 
         .. versionadded:: 2.3
-    default_reaction_emoji: Optional[:class:`str` | :class:`discord.Emoji`]
+    default_reaction_emoji: Optional[:class:`str` | :class:`discord.GuildEmoji`]
         The default forum reaction emoji.
 
         .. versionadded:: 2.5
@@ -1097,7 +1097,7 @@ class ForumChannel(_TextChannel):
         default_auto_archive_duration: ThreadArchiveDuration = ...,
         default_thread_slowmode_delay: int = ...,
         default_sort_order: SortOrder = ...,
-        default_reaction_emoji: Emoji | int | str | None = ...,
+        default_reaction_emoji: GuildEmoji | int | str | None = ...,
         available_tags: list[ForumTag] = ...,
         require_tag: bool = ...,
         overwrites: Mapping[Role | Member | Snowflake, PermissionOverwrite] = ...,
@@ -1148,10 +1148,10 @@ class ForumChannel(_TextChannel):
             The default sort order type to use to order posts in this channel.
 
             .. versionadded:: 2.3
-        default_reaction_emoji: Optional[:class:`discord.Emoji` | :class:`int` | :class:`str`]
+        default_reaction_emoji: Optional[:class:`discord.GuildEmoji` | :class:`int` | :class:`str`]
             The default reaction emoji.
             Can be a unicode emoji or a custom emoji in the forms:
-            :class:`Emoji`, snowflake ID, string representation (eg. '<a:emoji_name:emoji_id>').
+            :class:`GuildEmoji`, snowflake ID, string representation (eg. '<a:emoji_name:emoji_id>').
 
             .. versionadded:: 2.5
         available_tags: List[:class:`ForumTag`]
